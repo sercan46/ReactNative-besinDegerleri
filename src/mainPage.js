@@ -36,15 +36,15 @@ export default class MainPage extends Component {
             }
             else {
                 Alert.alert(
-                    "Hata",
-                    "Geçerli Ürün İsmi Giriniz",
+                    "Error",
+                    "Enter Valid Product Name",
                     [
                         {
-                            text: "Kapat",
+                            text: "Cancel",
                             onPress: () => console.log("Cancel Pressed"),
                             style: "cancel"
                         },
-                        { text: "Tamam", onPress: () => console.log("OK Pressed") }
+                        { text: "Okey", onPress: () => console.log("OK Pressed") }
                     ]
                 );
             }
@@ -54,18 +54,18 @@ export default class MainPage extends Component {
     }
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{padding:20}}>
                 <Image source={CALORIE} style={styles.imageStyle} resizeMode='stretch' />
-                <Text style={styles.headerText}>Değerlerini öğrenmek istediğiniz besin ile ilgili bilgiyi aşağıdaki alana İngilizce ismi ile yazıp 'Ara...' butonuna basınız. </Text>
+                <Text style={styles.headerText}>Write the information about the food you want to learn the values ​​of, with its English name in the field below and press the 'Search...' button. </Text>
                 <TextInput
                     style={styles.textInputStyle}
                     onChangeText={(val) => this.state.textInput = val}
                     placeholderTextColor='green'
                     underlineColorAndroid='green'
-                    placeholder="Ürün Adı"
+                    placeholder="Name of the product"
                 />
                 <View style={styles.buttonStyle}>
-                    <Button color='orange' title='Ara...' onPress={() => this.searchCalori()}></Button>
+                    <Button color='crimson' title='Search...' onPress={() => this.searchCalori()}></Button>
                 </View>
             </SafeAreaView>
         )
@@ -73,7 +73,9 @@ export default class MainPage extends Component {
 }
 const styles = StyleSheet.create({
     imageStyle: {
-        height: '50%'
+        width:'100%',
+        height: '50%',
+
     },
     headerText: {
         padding: 20,

@@ -14,12 +14,13 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator headerMode="screen"
         screenOptions={{
-          headerTintColor: 'black',
-          headerStyle: { backgroundColor: 'orange' },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: 'crimson' },
         }} >
         <Stack.Screen name="Home"
           component={MainPage}
-          options={{ title: 'Ana sayfa' }} />
+          options={{ title: 'Home' }} />
         <Stack.Screen name="detailPage" component={FoodDetailPage}
           options={({ route }) => ({ title: route.params.name })}
 
